@@ -16,13 +16,13 @@ function Search(props) {
   }
 
   return (
-    <div className="search__container">
+    <div className={props.mode ? "search__container" : "search__container search__container_night"}>
       <div className="search__icon" onClick={handleClick}>
         <FontAwesomeIcon icon={faSearch} />
       </div>
 
       <input
-        className="search__input"
+        className={props.mode ? "search__input" : "search__input search__input_night"}
         type="text"
         name="bar"
         value={text}

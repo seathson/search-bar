@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
 function Svg(props) {
-  const [state, setState] = useState(true);
+  const [time, setTime] = useState(null)
 
-  function changeMode(e) {
-    setState(!state);
+  function checkTime() {
+    let timeNow = new Date().getTime()
+
+    if (time + 1000 < timeNow) {
+      setTime(timeNow)
+      props.changeMode()
+    }
   }
 
   return (
@@ -13,13 +18,13 @@ function Svg(props) {
         viewBox="-6 -6 12 12"
         width="125"
         height="125"
-        onClick={changeMode}
+        onClick={checkTime}
       >
         <defs>
           <mask id="mood">
             <circle cx="0" cy="0" r="5" fill="white"></circle>
             <circle
-              cx={state ? "3" : "10"}
+              cx={props.mode ? "10" : "3"}
               cy="0"
               r="5"
               style={{ transition: "1s" }}
@@ -32,8 +37,8 @@ function Svg(props) {
           cy="0"
           r="5"
           mask="url(#mood)"
-          transform={state ? "rotate(-24)" : "rotate(200)"}
-          fill={state ? "black" : "yellow"}
+          transform={props.mode ? "rotate(200)" : "rotate(-24)"}
+          fill={props.mode ? "yellow" : "black"}
           style={{ transition: "1s" }}
         ></circle>
       </svg>
