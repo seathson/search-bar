@@ -1,0 +1,14 @@
+.burgerMenu__switcher_open
+
+  i
+    opacity: 0
+    
+  &::before
+    transition: ease-out 0.2s
+    transform: rotate(45deg) translateX(5px) translateY(5px)
+    margin: 0
+
+  &::after
+    transition: ease-out 0.2s
+    transform: rotate(-45deg) translateX(5px) translateY(-5px)
+    margin: 0

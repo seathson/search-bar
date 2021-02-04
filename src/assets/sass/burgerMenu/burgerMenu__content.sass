@@ -1,0 +1,21 @@
+.burgerMenu__content
+  position: fixed
+  display: flex
+  margin-top: 270px
+  width: 150px
+  height: 200px
+  background-color: #fff
+  transition: .5s
+  visibility: hidden
+  animation: close .5s ease 0s
+
+  @keyframes close
+    0%
+      width: 150px
+      height: 200px
+    50%
+      width: 150px
+      height: 10px
+    100%
+      width: 0px
+      height: 0px

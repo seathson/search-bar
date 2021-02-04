@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import BurgerMenu from "../burgerMenu/BurgerMenu";
 
 function Search(props) {
   const [text, setText] = useState("");
@@ -33,6 +34,7 @@ function Search(props) {
       <div className={text === '' ? 'search__cross search__cross_invisible' : 'search__cross'} onClick={() => setText('')}>
         <FontAwesomeIcon icon={faTimes}/>
       </div>
+      <BurgerMenu/>
     </div>
   );
 }
