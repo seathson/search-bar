@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Search from "../components/search/Search";
-import Icon from "../components/icon/Icon";
 import BackgroundDay from "../assets/imgs/day.jpg";
 import BackgroundNight from "../assets/imgs/night.png";
+import { useSelector } from "react-redux";
 
 function Home() {
-  const [mode, setMode] = useState(true);
-
-  function changeMode() {
-    setMode(!mode);
-  }
+  const mode = useSelector(state => state.theme.light)
+  const effect = useSelector(state => state.effect.snow)
 
   const day = {
     backgroundImage: `url(${BackgroundDay})`,
@@ -25,8 +22,7 @@ function Home() {
     <div className="container" style={mode ? day : night}>
       <div className="search">
         <h1>Search</h1>
-        <Search mode={mode}/>
-        <Icon changeMode={changeMode} mode={mode}/>
+        <Search  mode={mode} effect={effect} />
       </div>
     </div>
   );

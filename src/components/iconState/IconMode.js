@@ -1,25 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { changeTheme } from "../../redux/actions";
 
-function Svg(props) {
-  const [time, setTime] = useState(null)
+function IconMode(props) {
+  const [time, setTime] = useState(null);
+  const dispatch = useDispatch()
 
   function checkTime() {
-    let timeNow = new Date().getTime()
+    let timeNow = new Date().getTime();
 
     if (time + 1000 < timeNow) {
-      setTime(timeNow)
-      props.changeMode()
+      setTime(timeNow);
+      dispatch(changeTheme())
     }
   }
 
   return (
-    <div>
-      <svg
-        viewBox="-6 -6 12 12"
-        width="125"
-        height="125"
-        onClick={checkTime}
-      >
+    <div className="iconMode">
+      <svg viewBox="-6 -6 12 12" onClick={checkTime}>
         <defs>
           <mask id="mood">
             <circle cx="0" cy="0" r="5" fill="white"></circle>
@@ -38,7 +36,7 @@ function Svg(props) {
           r="5"
           mask="url(#mood)"
           transform={props.mode ? "rotate(200)" : "rotate(-24)"}
-          fill={props.mode ? "yellow" : "black"}
+          fill={props.mode ? "#fceb4e" : "#8d73eb"}
           style={{ transition: "1s" }}
         ></circle>
       </svg>
@@ -46,4 +44,4 @@ function Svg(props) {
   );
 }
 
-export default Svg;
+export default IconMode;

@@ -1,0 +1,2 @@
+export const CHANGE_THEME = 'APP/CHANGE_THEME'
+export const CHANGE_EFFECT = 'APP/CHANGE_EFFECT'

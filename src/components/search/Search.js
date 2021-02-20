@@ -2,9 +2,16 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
 import BurgerMenu from "../burgerMenu/BurgerMenu";
+import IconMode from '../iconState/IconMode'
+import IconEffect from "../iconState/IconEffect";
 
 function Search(props) {
   const [text, setText] = useState("");
+  
+  const menuItems = [
+    { id: 1, text: 'Тема', change: <IconMode mode={props.mode}/> },
+    { id: 2, text: 'Эффекты', change: <IconEffect effect={props.effect}/> },
+  ]
 
   function handleClick(e) {
     let key = e.code;
@@ -34,7 +41,7 @@ function Search(props) {
       <div className={text === '' ? 'search__cross search__cross_invisible' : 'search__cross'} onClick={() => setText('')}>
         <FontAwesomeIcon icon={faTimes}/>
       </div>
-      <BurgerMenu/>
+      <BurgerMenu menuItems={menuItems} mode={props.mode}/>
     </div>
   );
 }

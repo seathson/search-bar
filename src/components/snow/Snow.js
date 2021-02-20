@@ -1,6 +1,6 @@
-import React from "react";
+import React from "react"
 
-function Snow(props) {
+function Snow() {
   const sizeMin = 4;
   const sizeMax = 8;
 
