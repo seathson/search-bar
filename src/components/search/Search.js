@@ -7,19 +7,21 @@ import IconEffect from "../iconState/IconEffect";
 
 function Search(props) {
   const [text, setText] = useState("");
+  const [input, setInput] = useState(false)
   
   const menuItems = [
-    { id: 1, text: 'Тема', change: <IconMode mode={props.mode}/> },
-    { id: 2, text: 'Эффекты', change: <IconEffect effect={props.effect}/> },
+    { id: 1, text: 'Theme', change: <IconMode mode={props.mode}/> },
+    { id: 2, text: 'Effects', change: <IconEffect effect={props.effect}/> },
   ]
 
   function handleClick(e) {
     let key = e.code;
 
-    if (key === "Enter") {
-      window.location.href = "https://yandex.ru/search/?text=" + text;
-    } else if (e.type === "click") {
-      window.location.href = "https://yandex.ru/search/?text=" + text;
+    if (key === "Enter" || e.type === "click") {
+      if (text !== '')
+        window.location.href = "https://www.google.com/search?q=" + text
+      else
+        setInput(true)
     }
   }
 
@@ -30,11 +32,23 @@ function Search(props) {
       </div>
 
       <input
-        className={props.mode ? "search__input" : "search__input search__input_night"}
+        placeholder='Enter your request'
+        className={
+          input
+            ? props.mode
+              ? "search__input search__input_empty"
+              : "search__input search__input_night search__input_empty"
+            : props.mode
+              ? "search__input"
+              : "search__input search__input_night"
+            }
         type="text"
         name="bar"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          setText(e.target.value)
+          setInput(false)
+        }}
         onKeyPress={handleClick}
       />
 

@@ -9,12 +9,12 @@ function Home() {
   const effect = useSelector(state => state.effect.snow)
 
   const day = {
-    backgroundImage: `url(${BackgroundDay})`,
+    background: `url(${BackgroundDay})`,
     transition: "1s",
   };
 
   const night = {
-    backgroundImage: `url(${BackgroundNight})`,
+    background: `url(${BackgroundNight})`,
     transition: "1s",
   };
 
