@@ -37,6 +37,7 @@ function BurgerMenu(props) {
           </div>
         </div>
         <div
+          style={open ? { visibility: "visible" } : { visibility: "hidden" }}
           className={
             open
               ? props.mode

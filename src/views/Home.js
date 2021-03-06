@@ -2,7 +2,6 @@ import React from "react";
 import Search from "../components/search/Search";
 import { useSelector } from "react-redux";
 
-
 function Home() {
   const mode = useSelector((state) => state.theme.light);
   const effect = useSelector((state) => state.effect.snow);
