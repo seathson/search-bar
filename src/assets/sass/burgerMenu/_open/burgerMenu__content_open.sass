@@ -1,9 +1,11 @@
 .burgerMenu__content_open
-  visibility: visible
+  //visibility: visible
   animation: open .5s ease 0s
+  animation-fill-mode: forwards
 
   @keyframes open
     0%
+      display: none
       width: 0px
       height: 0px
     50%
@@ -12,3 +14,4 @@
     100%
       width: 180px
       height: 200px
+      display: flex

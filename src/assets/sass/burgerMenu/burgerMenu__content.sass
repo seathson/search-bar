@@ -7,18 +7,21 @@
   height: 200px
   background-color: #fff
   transition: .5s
-  visibility: hidden
+  //visibility: hidden
   overflow: hidden
   opacity: .9
   animation: close .5s ease 0s
+  animation-fill-mode: forwards
 
   @keyframes close
     0%
+      display: flex
       width: 180px
       height: 200px
     50%
       width: 180px
       height: 10px
     100%
+      display: none
       width: 0px
       height: 0px

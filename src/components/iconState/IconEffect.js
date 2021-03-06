@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeEffect } from "../../redux/actions";
 
@@ -17,9 +17,16 @@ function IconEffect(props) {
     }
   }
 
+  useEffect(() => {
+    if (window.visualViewport.width < 1030) {
+      setTimeout(() => dispatch(changeEffect()))
+    }
+  }, [])
+
+
   return (
     <div className='iconEffect'>
-      <svg width="50" height="50" viewBox="0 0 12 12" onClick={checkTime}>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 12 12" onClick={checkTime}>
         <path
           className="st1"
           fill={props.effect ? colorOn : colorOff}
