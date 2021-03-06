@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/search-bar/static/css/main.b8d1f63a.chunk.css",
-    "main.js": "/search-bar/static/js/main.8b05018d.chunk.js",
-    "main.js.map": "/search-bar/static/js/main.8b05018d.chunk.js.map",
+    "main.css": "/search-bar/static/css/main.7be69c2c.chunk.css",
+    "main.js": "/search-bar/static/js/main.051f46f0.chunk.js",
+    "main.js.map": "/search-bar/static/js/main.051f46f0.chunk.js.map",
     "runtime-main.js": "/search-bar/static/js/runtime-main.ccff6e0f.js",
     "runtime-main.js.map": "/search-bar/static/js/runtime-main.ccff6e0f.js.map",
     "static/js/2.54f3b5eb.chunk.js": "/search-bar/static/js/2.54f3b5eb.chunk.js",
     "static/js/2.54f3b5eb.chunk.js.map": "/search-bar/static/js/2.54f3b5eb.chunk.js.map",
     "index.html": "/search-bar/index.html",
-    "static/css/main.b8d1f63a.chunk.css.map": "/search-bar/static/css/main.b8d1f63a.chunk.css.map",
+    "static/css/main.7be69c2c.chunk.css.map": "/search-bar/static/css/main.7be69c2c.chunk.css.map",
     "static/js/2.54f3b5eb.chunk.js.LICENSE.txt": "/search-bar/static/js/2.54f3b5eb.chunk.js.LICENSE.txt",
-    "static/media/all.sass": "/search-bar/static/media/night.45d93be3.webp"
+    "static/media/all.sass": "/search-bar/static/media/day.144d30cd.webp"
   },
   "entrypoints": [
     "static/js/runtime-main.ccff6e0f.js",
     "static/js/2.54f3b5eb.chunk.js",
-    "static/css/main.b8d1f63a.chunk.css",
-    "static/js/main.8b05018d.chunk.js"
+    "static/css/main.7be69c2c.chunk.css",
+    "static/js/main.051f46f0.chunk.js"
   ]
 }
